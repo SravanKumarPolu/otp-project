@@ -12,6 +12,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+/* Custom CSS */
+button.border-none {
+  border: none; /* Remove the button border */
+}
+
+button.bg-primary:hover {
+  background-color: #0c153e; /* Change to the desired bg-success color code */
+}
 
 .App-header {
   background-color: #282c34;

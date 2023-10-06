@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BsFillShieldLockFill, BsTelephoneFill } from "react-icons/bs";
 import { signInWithPhoneNumber } from "firebase/auth";
 import OtpInput from "otp-input-react";
-
+import "./App.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import toast, { Toaster } from "react-hot-toast";
@@ -55,20 +55,19 @@ function App() {
         setUser(res.user);
         setLoading(false);
       })
-      .className((err) => {
+      .catch((err) => {
+        // Use .catch() here, not .className()
         console.log(err);
         setLoading(false);
       });
   }
   return (
-    <section className="bg-primary d-flex align-items-center justify-content-center text-white vh-100">
+    <section className="bg-success d-flex align-items-center justify-content-center text-white vh-100">
       <div>
-        <Toaster toastOptions={{ duration: 4000 }} />
+        <Toaster toastOptions={{ duration: 5000 }} />
         <div id="recaptcha-container"></div>
         {user ? (
-          <h2
-            className="text-center lead
-         text-white font-weight-medium fs-5">
+          <h2 className="font-weight-bold fs-3 text-white text-center">
             👍Login Success
           </h2>
         ) : (
@@ -90,21 +89,19 @@ function App() {
                   value={otp}
                   onChange={setOtp}
                   OTPLength={6}
-                  otyType="number"
+                  inputType="number" // Corrected attribute name
                   disabled={false}
                   autoFocus
-                  className=" negative-gap d-flex row"></OtpInput>
+                  className="form-control" // Apply Bootstrap's form-control class or custom styles here
+                />
+
                 <button
                   onClick={onOTPVerify}
-                  className="bg-success text-white 
-            
-            d-flex align-items-center
-             justify-content-center py-2.5 rounded">
+                  className="bg-primary border-none 
+                      text-white d-flex align-items-center 
+                  justify-content-center py-2.5 rounded">
                   {loading && (
-                    <div
-                      size={20}
-                      class="mt-1 spinner-border text-white"
-                      role="status">
+                    <div class="mt-1 spinner-border text-white" role="status">
                       <span class="visually-hidden">Loading...</span>
                     </div>
                   )}
@@ -125,10 +122,9 @@ function App() {
 
                 <button
                   onClick={onSignup}
-                  className="bg-success text-white 
-            
-            d-flex align-items-center
-             justify-content-center py-2.5 rounded">
+                  className="bg-primary border-none 
+                      text-white d-flex align-items-center 
+                  justify-content-center py-2.5 rounded">
                   {loading && (
                     <div
                       size={20}
