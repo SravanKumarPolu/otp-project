@@ -63,7 +63,7 @@ function Login() {
   return (
     <section className="bg-success d-flex align-items-center justify-content-center text-white vh-100">
       <div>
-        <Toaster toastOptions={{ duration: 5000 }} />
+        <Toaster toastOptions={{ duration: 8000 }} />
         <div id="recaptcha-container"></div>
         {user ? (
           <h2 className="font-weight-bold fs-3 text-white text-center">
