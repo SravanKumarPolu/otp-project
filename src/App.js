@@ -20,13 +20,12 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
-      <Route path="/" element={<Login />}>
-        <Route path="/Authorised" element={<Authorised />} />
-        <Route path="/unauthorised" element={<Unauthorised />} />
-        <Route path="/aftermarket" element={<AfterMarket />} />
-        <Route path="/towling" element={<Towling />} />
-        <Route path="/service" element={<EVServiceCenter />} />
-      </Route>
+      <Route path="/" element={<Login />} />
+      <Route path="/authorised" element={<Authorised />} />
+      <Route path="/unauthorised" element={<Unauthorised />} />
+      <Route path="/aftermarket" element={<AfterMarket />} />
+      <Route path="/towling" element={<Towling />} />
+      <Route path="/service" element={<EVServiceCenter />} />
     </Route>
   )
 );

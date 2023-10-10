@@ -27,16 +27,14 @@ export default function Header() {
           </button>
           <div
             className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`} // Conditional class for mobile menu
-            id="navbarNav"
-          >
+            id="navbarNav">
             <ul
               className="navbar-nav text-white 
             
             container  justify-content-center
-            align-items-center"
-            >
+            align-items-center">
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/">
+                <Link className="nav-link text-white" to="/authorised">
                   Authorised
                 </Link>
               </li>
