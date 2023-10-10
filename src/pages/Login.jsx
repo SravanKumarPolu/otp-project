@@ -9,11 +9,11 @@ import toast, { Toaster } from "react-hot-toast";
 import { auth } from "../firebase.config";
 import { RecaptchaVerifier } from "firebase/auth";
 function Login() {
-  const [otp, setOtp] = useState("");
-  const [ph, setPh] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [showOTP, setShowOTP] = useState(false);
-  const [user, setUser] = useState(null);
+  const [otp, setOtp] = React.useState("");
+  const [ph, setPh] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [showOTP, setShowOTP] = React.useState(false);
+  const [user, setUser] = React.useState(null);
   function onCaptchVerify() {
     if (!window.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
@@ -61,7 +61,7 @@ function Login() {
       });
   }
   return (
-    <section className="bg-success d-flex align-items-center justify-content-center text-white vh-100">
+    <div className="bg-success d-flex align-items-center justify-content-center text-white vh-100">
       <div>
         <Toaster toastOptions={{ duration: 8000 }} />
         <div id="recaptcha-container"></div>
@@ -139,7 +139,7 @@ function Login() {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 }
 
